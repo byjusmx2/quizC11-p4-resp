@@ -10,15 +10,15 @@ function preload(){
 function setup() {
   createCanvas(400, 400);
   
-  //create a trex sprite
+  //crear sprite de trex
   trex = createSprite(50,380,20,50);
   trex.addAnimation("running", trex_running);
   
-  //adding size and position to trex
+  //agregar tamaño y posición al trex
   trex.scale = 0.5;
   trex.x = 50
   
-  //create ground sprite
+  //crear sprite de suelo
   ground = createSprite(200,380,400,20);
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
@@ -28,7 +28,7 @@ function draw() {
   background(220);
   
 
-  //jumping the trex on space key press
+  //hacer que el trex salte al presionar la barra espaciadora
   if(keyDown("space")) {
     trex.velocityY = -10;
   }
@@ -36,7 +36,7 @@ function draw() {
   trex.velocityY = trex.velocityY + 0.8
   
  
- //stop trex from falling down 
+ //evitar que el trex caiga 
   trex.collide(ground);
   drawSprites();
 }
